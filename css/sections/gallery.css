@@ -1,0 +1,133 @@
+.gallery {
+  text-align: center;
+}
+
+.gallery__title::after {
+  margin-inline: auto;
+}
+
+.gallery__subtitle {
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: 40px;
+}
+
+/* ===== Gallery Carousel ===== */
+
+.gallery-carousel {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 20px;
+  align-items: center;
+  width: 100%;
+}
+
+.gallery-carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.gallery-carousel__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-carousel__card {
+  flex-shrink: 0;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-carousel__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-carousel__card:active {
+  transform: translateY(-2px);
+}
+
+.gallery-carousel__card-image-wrapper {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: var(--color-gray, #f5f5f5);
+}
+
+.gallery-carousel__card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-carousel__card:hover .gallery-carousel__card-image {
+  transform: scale(1.05);
+}
+
+.gallery-carousel__card-title {
+  padding: 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-dark, #333);
+}
+
+.gallery-carousel__control {
+  border: 0;
+  background: var(--color-dark, #333);
+  color: var(--color-white, #fff);
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.gallery-carousel__control:hover:not(:disabled) {
+  background: var(--color-accent, #ff6b35);
+  transform: scale(1.1);
+}
+
+.gallery-carousel__control:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Mobile: 1 card */
+@media (max-width: 767px) {
+  .gallery-carousel__card {
+    width: 100%;
+  }
+}
+
+/* Tablet: 2 cards */
+@media (min-width: 768px) and (max-width: 990px) {
+  .gallery-carousel__card {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+/* Desktop: 4 cards */
+@media (min-width: 991px) {
+  .gallery-carousel__card {
+    width: calc((100% - 60px) / 4);
+  }
+}

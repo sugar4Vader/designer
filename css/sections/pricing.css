@@ -1,0 +1,80 @@
+.pricing__inner {
+  display: grid;
+  gap: 22px;
+}
+
+.pricing__benefits {
+  margin-top: 16px;
+  display: grid;
+  gap: 8px;
+}
+
+.pricing__benefits li {
+  position: relative;
+  padding-left: 22px;
+}
+
+.pricing__benefits li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  font-weight: 900;
+}
+
+.pricing__plans {
+  display: grid;
+  gap: 14px;
+}
+
+.pricing-card {
+  border-radius: var(--radius-sm);
+  background: var(--color-blue-dark);
+  padding: 20px;
+}
+
+.pricing-card__icon {
+  width: 54px;
+}
+
+.pricing-card__title {
+  font-size: 2.2rem;
+  margin-top: 8px;
+}
+
+.pricing-card__title::after {
+  display: none;
+}
+
+.pricing-card__price {
+  margin-top: 8px;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.pricing-card__price span {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.pricing-card__list {
+  margin-top: 10px;
+  display: grid;
+  gap: 5px;
+  opacity: 0.92;
+}
+
+.pricing-card .button {
+  margin-top: 14px;
+}
+
+@media (min-width: 992px) {
+  .pricing__inner {
+    grid-template-columns: 1fr 1.3fr;
+    gap: 30px;
+  }
+
+  .pricing__plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

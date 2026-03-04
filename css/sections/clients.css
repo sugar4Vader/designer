@@ -1,0 +1,92 @@
+.clients {
+  text-align: center;
+  padding-top: 0;
+}
+
+.clients__pattern {
+  display: block;
+  width: 100vw;
+  height: auto;
+  margin-left: calc(-50vw + 50%);
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.clients__title::after {
+  margin-inline: auto;
+}
+
+.clients__subtitle {
+  max-width: 680px;
+  margin-inline: auto;
+}
+
+/* ===== Clients Carousel ===== */
+
+.carousel-clients {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+}
+
+.carousel-clients__track {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  transition: transform var(--transition);
+}
+
+.carousel-clients__item {
+  background: var(--color-dark);
+  border-radius: var(--radius-sm);
+  min-height: 100px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.carousel-clients__item:hover {
+  transform: scale(1.05);
+}
+
+.carousel-clients__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-clients__control {
+  border: 0;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color var(--transition);
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-clients__control:hover:not(:disabled) {
+  color: var(--color-accent);
+}
+
+.carousel-clients__control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clients__inner {
+  padding-top: 40px;
+}
+
+@media (min-width: 768px) {
+  .clients__inner {
+    padding-top: 60px;
+  }
+}
